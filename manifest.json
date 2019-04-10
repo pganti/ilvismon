@@ -1,0 +1,26 @@
+{
+    "name": "RUM for Ad Visibility",
+    "version": "0.0.5",
+    "manifest_version": 2,
+    "description": "Injects debug script to show ad visibility info",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "Rum for GPT"
+    },
+    "permissions": [
+        "https://*/*",
+        "http://*/*",
+        "tabs",
+        "activeTab"
+    ],
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"]
+    }],
+    "web_accessible_resources": ["dfp.js"]
+}
